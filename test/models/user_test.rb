@@ -28,4 +28,10 @@ class UserTest < ActiveSupport::TestCase
       assert @user.valid?, "#{valid_address}は無効です"
     end
   end
+
+  test "emailが重複している場合" do
+    duplicate_user = @user.dup
+    @user.save
+    assert_not duplicate_user.valid?
+  end
 end
