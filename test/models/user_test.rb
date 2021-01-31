@@ -35,4 +35,14 @@ class UserTest < ActiveSupport::TestCase
     @user.save
     assert_not duplicate_user.valid?
   end
+
+  test "passwordが空の場合" do
+    @user.password = @user.password_confirmation = " "
+    assert_not @user.valid?
+  end
+
+  test "passwordが5文字以下の場合" do
+    @user.password = @user.password_confirmation = "a" * 5
+    assert_not @user.valid?
+  end
 end
