@@ -45,4 +45,8 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
   end
+
+  test "remember_digestがnilの状態でauthenticated?を実行した場合" do
+    assert_not @user.authenticated?("foobar")
+  end
 end
