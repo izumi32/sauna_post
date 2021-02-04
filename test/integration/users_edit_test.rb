@@ -18,9 +18,9 @@ class UsersEditTest < ActionDispatch::IntegrationTest
   end
 
   test "有効なユーザー編集" do
-    log_in @user
     get edit_user_path @user
-    assert_template 'users/edit'
+    log_in @user
+    assert_redirected_to edit_user_path @user
     name = "valid user"
     email = "user@valid.com"
     patch user_path @user, params: { user: { name: name,
