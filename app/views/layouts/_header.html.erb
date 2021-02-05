@@ -4,7 +4,7 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
       <% if logged_in? %>
-        <li><%= link_to "投稿", '#' %></li>
+        <li><%= link_to "投稿", newpost_path %></li>
         <li><%= link_to "アカウント", current_user %></li>
         <li><%= link_to "設定", edit_user_path(current_user) %></li>
         <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
