@@ -24,6 +24,10 @@ class User < ApplicationRecord
     SecureRandom.urlsafe_base64
   end
 
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
+
   # remember_digestにハッシュ化したトークンを保存
   def remember
     self.remember_token = User.new_token
