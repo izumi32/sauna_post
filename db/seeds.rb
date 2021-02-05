@@ -14,3 +14,24 @@ User.create!(name:  "Example User",
                password:              password,
                password_confirmation: password)
 end
+
+user1 = User.first
+user2 = User.second
+
+user1.microposts.create!(name: "極楽湯",
+                        address: "埼玉県和光市",
+                        price: 730,
+                        sauna: 1,
+                        evaluate: 4)
+
+user1.microposts.create!(name: "なごみの湯",
+                        address: "東京都杉並区",
+                        price: 2000,
+                        sauna: 1,
+                        evaluate: 3)
+
+user2.microposts.create!(name: "久松湯",
+                        address: "東京都練馬区",
+                        price: 900,
+                        sauna: 1,
+                        evaluate: 4)

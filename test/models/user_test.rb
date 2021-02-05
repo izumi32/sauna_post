@@ -49,4 +49,16 @@ class UserTest < ActiveSupport::TestCase
   test "remember_digestがnilの状態でauthenticated?を実行した場合" do
     assert_not @user.authenticated?("foobar")
   end
+
+  test "micropostと紐づいているuserを削除した場合" do
+    @user.save
+    @user.microposts.create(name: "極楽湯",
+                            address: "埼玉県和光市",
+                            price: 730,
+                            sauna: 1,
+                            evaluate: 4)
+    assert_difference 'Micropost.count', -1 do
+      @user.destroy
+    end
+  end
 end

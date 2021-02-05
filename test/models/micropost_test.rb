@@ -34,4 +34,8 @@ class MicropostTest < ActiveSupport::TestCase
     @micropost.evaluate = 2.5
     assert_not @micropost.valid?
   end
+
+  test "順序付け" do
+    assert_equal microposts(:gokuraku), Micropost.first
+  end
 end

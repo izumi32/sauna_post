@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_02_05_031105) do
     t.string "name"
     t.string "address"
     t.integer "price"
-    t.binary "sauna"
+    t.integer "sauna"
     t.integer "evaluate"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

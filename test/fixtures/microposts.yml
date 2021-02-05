@@ -1,17 +1,35 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+sakae:
+  name: "栄湯"
+  address: "東京都渋谷区"
+  price: 880
+  sauna: 1
+  evaluate: 4
+  created_at: <%= 10.minutes.ago %>
+  user: michael
 
-one:
-  name: MyString
-  address: MyString
-  price: 1
-  sauna: 
-  evaluate: 1
-  user: one
+nagomi:
+  name: "なごみの湯"
+  address: "東京都杉並区"
+  price: 2000
+  sauna: 1
+  evaluate: 3
+  created_at: <%= 3.years.ago %>
+  user: michael
 
-two:
-  name: MyString
-  address: MyString
-  price: 1
-  sauna: 
-  evaluate: 1
-  user: two
+hisamatsu:
+  name: "久松湯"
+  address: "東京都練馬区"
+  price: 900
+  sauna: 1
+  evaluate: 4
+  created_at: <%= 2.hours.ago %>
+  user: michael
+
+gokuraku:
+  name: "極楽湯"
+  address: "埼玉県和光市"
+  price: 730
+  sauna: 1
+  evaluate: 4
+  created_at: <%= Time.zone.now %>
+  user: michael

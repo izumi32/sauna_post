@@ -4,7 +4,7 @@ class CreateMicroposts < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :address
       t.integer :price
-      t.binary :sauna
+      t.integer :sauna
       t.integer :evaluate
       t.references :user, null: false, foreign_key: true
 
