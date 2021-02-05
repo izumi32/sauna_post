@@ -28,4 +28,12 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to login_url
   end
+
+  test "別のユーザーでdestroyにリクエスト" do
+    log_in users(:michael)
+    assert_no_difference 'Micropost.count' do
+      delete micropost_path(@micropost)
+    end
+    assert_redirected_to root_url
+  end
 end

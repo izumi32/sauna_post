@@ -23,7 +23,7 @@ hisamatsu:
   sauna: 1
   evaluate: 4
   created_at: <%= 2.hours.ago %>
-  user: michael
+  user: archer
 
 gokuraku:
   name: "極楽湯"
@@ -32,4 +32,4 @@ gokuraku:
   sauna: 1
   evaluate: 4
   created_at: <%= Time.zone.now %>
-  user: michael
+  user: archer
