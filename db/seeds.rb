@@ -35,3 +35,10 @@ user2.microposts.create!(name: "久松湯",
                         price: 900,
                         sauna: 1,
                         evaluate: 4)
+
+users = User.all
+user = User.first
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }
