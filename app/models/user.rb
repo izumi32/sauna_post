@@ -33,7 +33,8 @@ class User < ApplicationRecord
   end
 
   def feed
-    Micropost.where("user_id = ?", id)
+    index_ids = self.following_ids << self.id
+    Micropost.where(user_id: index_ids)
   end
 
   def follow(other_user)
