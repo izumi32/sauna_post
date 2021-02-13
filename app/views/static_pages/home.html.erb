@@ -30,6 +30,11 @@
           <% end %>
         </div>
 
+        <div class="field">
+          <%= f.label :evaluate, Micropost.human_attribute_name("evaluate") %>
+          <%= f.collection_select :evaluate, [1, 2, 3, 4, 5], :to_s, :to_s, selected: @search_params[:evaluate], include_blank: '選択' %>
+        </div>
+
         <div class="actions">
           <%= f.submit "検索" %>
         </div>

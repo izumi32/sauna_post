@@ -1,16 +1,13 @@
 class Micropost < ApplicationRecord
-  enum sauna: { absence: 0, presence: 1 }
   belongs_to :user
   default_scope -> { order(created_at: :desc) }
   validates :name, presence: true
   validates :address, presence: true
   validates :price, presence: true
   validates :sauna, presence: true
-  validates :evaluate, presence: true,
-                       numericality: { greater_than_or_equal_to: 1,
-                                       less_than_or_equal_to: 5,
-                                       only_integer: true }
+  validates :evaluate, presence: true
   validates :user_id, presence: true
+  enum sauna: { absence: 0, presence: 1 }
 
   scope :search, -> (search_params) do
 
@@ -22,6 +19,7 @@ class Micropost < ApplicationRecord
     .price_from(search_params[:price_from])
     .price_to(search_params[:price_to])
     .sauna_is(search_params[:sauna])
+    .evaluate_is(search_params[:evaluate])
   end
 
   scope :name_like, -> (name) {
@@ -42,6 +40,10 @@ class Micropost < ApplicationRecord
 
   scope :sauna_is, -> (sauna) {
     where(sauna: sauna) if sauna.present?
+  }
+
+  scope :evaluate_is, -> (evaluate) {
+    where(evaluate: evaluate) if evaluate.present?
   }
 
 end
