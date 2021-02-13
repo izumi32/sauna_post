@@ -2,10 +2,24 @@
   <div class="col-md-8">
     <h3>投稿一覧</h3>
 
-    <%= form_tag(root_path, method: :get) do %>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag '検索' %>
-    <% end %>
+    <div class="search-form">
+      <%= form_with(scope: :search, url: root_path, method: :get, local: true) do |f| %>
+
+        <div class="field">
+          <%= f.label(:name, "名前") %>
+          <%= f.text_field :name, value: @search_params[:name] %>
+        </div>
+
+        <div class="field">
+          <%= f.label(:address, "住所") %>
+          <%= f.text_field :address, value: @search_params[:address] %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "検索" %>
+        </div>
+      <% end %>
+    </div>
 
     <% if @feed_items.any? %>
       <ol class="microposts">
