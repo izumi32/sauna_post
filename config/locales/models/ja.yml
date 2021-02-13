@@ -7,3 +7,12 @@ ja:
         name: ニックネーム
         email: メールアドレス
         password: パスワード
+      micropost:
+        name: 名前
+        address: 住所
+        price: 料金
+        sauna: サウナ
+      micropost/sauna:
+        presence: 有
+        absence: 無
+        evaluate: 評価

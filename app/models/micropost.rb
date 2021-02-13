@@ -1,13 +1,11 @@
 class Micropost < ApplicationRecord
+  enum sauna: { absence: 0, presence: 1 }
   belongs_to :user
   default_scope -> { order(created_at: :desc) }
   validates :name, presence: true
   validates :address, presence: true
   validates :price, presence: true
-  validates :sauna, presence: true,
-                    numericality: { greater_than_or_equal_to: 0,
-                                    less_than_or_equal_to: 1,
-                                    only_integer: true }
+  validates :sauna, presence: true
   validates :evaluate, presence: true,
                        numericality: { greater_than_or_equal_to: 1,
                                        less_than_or_equal_to: 5,
@@ -23,6 +21,7 @@ class Micropost < ApplicationRecord
     .address_like(search_params[:address])
     .price_from(search_params[:price_from])
     .price_to(search_params[:price_to])
+    .sauna_is(search_params[:sauna])
   end
 
   scope :name_like, -> (name) {
@@ -41,11 +40,8 @@ class Micropost < ApplicationRecord
     where('price <= ?', price_to) if price_to.present?
   }
 
-  # def Micropost.search(search_word)
-  #   if search_word
-  #     self.where(['name LIKE ?', "%#{search_word}%"])
-  #   else
-  #     self.all
-  #   end
-  # end
+  scope :sauna_is, -> (sauna) {
+    where(sauna: sauna) if sauna.present?
+  }
+
 end
