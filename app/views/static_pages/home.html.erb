@@ -15,6 +15,12 @@
           <%= f.text_field :address, value: @search_params[:address] %>
         </div>
 
+        <div class="field">
+          <%= f.label(:price, "料金") %>
+          <%= f.text_field :price_from, value: @search_params[:price_from] %> ~
+          <%= f.text_field :price_to, value: @search_params[:price_to] %>
+        </div>
+
         <div class="actions">
           <%= f.submit "検索" %>
         </div>

@@ -21,7 +21,8 @@ class Micropost < ApplicationRecord
 
     name_like(search_params[:name])
     .address_like(search_params[:address])
-
+    .price_from(search_params[:price_from])
+    .price_to(search_params[:price_to])
   end
 
   scope :name_like, -> (name) {
@@ -30,6 +31,14 @@ class Micropost < ApplicationRecord
 
   scope :address_like, -> (address) {
     where('address LIKE ?', "%#{address}%") if address.present?
+  }
+
+  scope :price_from, -> (price_from) {
+    where('? <= price', price_from) if price_from.present?
+  }
+
+  scope :price_to, -> (price_to) {
+    where('price <= ?', price_to) if price_to.present?
   }
 
   # def Micropost.search(search_word)

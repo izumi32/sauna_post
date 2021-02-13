@@ -9,6 +9,6 @@ class StaticPagesController < ApplicationController
   private
 
   def micropost_search_params
-    params.fetch(:search, {}).permit(:name, :address)
+    params.fetch(:search, {}).permit(:name, :address, :price_from, :price_to)
   end
 end
