@@ -13,4 +13,12 @@ class Micropost < ApplicationRecord
                                        less_than_or_equal_to: 5,
                                        only_integer: true }
   validates :user_id, presence: true
+
+  def Micropost.search(search_word)
+    if search_word
+      self.where(['name LIKE ?', "%#{search_word}%"])
+    else
+      self.all
+    end
+  end
 end

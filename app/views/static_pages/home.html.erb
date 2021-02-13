@@ -2,6 +2,11 @@
   <div class="col-md-8">
     <h3>投稿一覧</h3>
 
+    <%= form_tag(root_path, method: :get) do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag '検索' %>
+    <% end %>
+
     <% if @feed_items.any? %>
       <ol class="microposts">
         <%= render @feed_items %>

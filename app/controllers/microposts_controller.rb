@@ -3,7 +3,6 @@ class MicropostsController < ApplicationController
   before_action :correct_user, only: :destroy
 
   def index
-    redirect_to newpost_path
   end
 
   def new
