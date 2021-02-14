@@ -10,7 +10,7 @@
   <span class="content">住所：<%= micropost.address %></span>
   <span class="content">料金：<%= micropost.price %>円</span>
   <span class="content">
-    サウナ： <%= Micropost.human_attribute_name("sauna.#{micropost.sauna}") %>
+    サウナ：<%= Micropost.human_attribute_name("sauna.#{micropost.sauna}") %>
   </span>
   <span class="content">評価：<%= micropost.evaluate %></span>
   <span class="timestamp">

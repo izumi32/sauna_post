@@ -2,7 +2,7 @@ sakae:
   name: "栄湯"
   address: "東京都渋谷区"
   price: 880
-  sauna: 1
+  sauna: :presence
   evaluate: 4
   created_at: <%= 10.minutes.ago %>
   user: michael
@@ -11,7 +11,7 @@ nagomi:
   name: "なごみの湯"
   address: "東京都杉並区"
   price: 2000
-  sauna: 1
+  sauna: :presence
   evaluate: 3
   created_at: <%= 3.years.ago %>
   user: michael
@@ -20,7 +20,7 @@ hisamatsu:
   name: "久松湯"
   address: "東京都練馬区"
   price: 900
-  sauna: 1
+  sauna: :presence
   evaluate: 4
   created_at: <%= 2.hours.ago %>
   user: archer
@@ -29,7 +29,7 @@ gokuraku:
   name: "極楽湯"
   address: "埼玉県和光市"
   price: 730
-  sauna: 1
+  sauna: :presence
   evaluate: 4
   created_at: <%= Time.zone.now %>
   user: archer
