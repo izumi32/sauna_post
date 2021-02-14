@@ -12,7 +12,7 @@ ja:
         address: 住所
         price: 料金
         sauna: サウナ
+        evaluate: 評価
       micropost/sauna:
         presence: 有
         absence: 無
-        evaluate: 評価

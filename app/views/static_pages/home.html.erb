@@ -25,7 +25,8 @@
           <%= f.label :sauna, Micropost.human_attribute_name("sauna") %>
           <%= f.collection_radio_buttons :sauna, Micropost.saunas, :first, :first do |r| %>
             <%= tag.div class: 'form-check form-check-inline' do %>
-              <%= r.radio_button(checked: r.value == @search_params[:sauna], class: 'form-check-input') + f.label(Micropost.human_attribute_name("sauna.#{r.text}"), class: 'form-check-label') %>
+              <%= r.radio_button(checked: r.value == @search_params[:sauna], class: 'form-check-input') %>
+              <%= f.label(Micropost.human_attribute_name("sauna.#{r.text}"), class: 'form-check-label') %>
             <% end %>
           <% end %>
         </div>

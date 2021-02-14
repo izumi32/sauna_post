@@ -8,22 +8,34 @@
         <%= form_with(model: @micropost, local: true) do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
 
-          <%= f.label :name, "名前" %>
-          <%= f.text_field :name, class: "field" %>
+          <div class="field">
+            <%= f.label :name, "名前　" %>
+            <%= f.text_field :name, class: "field" %>
+          </div>
+          <div class="field">
+            <%= f.label :address, "住所　" %>
+            <%= f.text_field :address, class: "field" %>
+          </div>
 
-          <%= f.label :address, "住所" %>
-          <%= f.text_field :address, class: "field" %>
+          <div class="field">
+            <%= f.label :price, "値段　" %>
+            <%= f.text_field :price, class: "field" %>
+          </div>
 
-          <%= f.label :price, "値段" %>
-          <%= f.text_field :price, class: "field" %>
+          <div class="field">
+            <%= f.label :sauna, "サウナ" %>
+            <%= f.select :sauna, [["有", 1], ["無", 0]], class: "field" %>
+          </div>
 
-          <%= f.label :sauna, "サウナの有無" %>
-          <%= f.select :sauna, [["有", 1], ["無", 0]], class: "field" %>
+          <div class="field">
+            <%= f.label :evaluate, "評価　" %>
+            <%= f.select :evaluate, [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]], class: "field" %>
+          </div>
 
-          <%= f.label :evaluate, "評価" %>
-          <%= f.select :evaluate, [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]], class: "field" %>
+          <div>
+            <%= f.submit "投稿", class: "btn btn-primary" %>
+          </div>
 
-          <%= f.submit "投稿", class: "btn btn-primary" %>
         <% end %>
       </section>
     </aside>
