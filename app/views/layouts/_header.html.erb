@@ -1,10 +1,12 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to image_tag("sauna_logo.jpg", alt: "sauna_logo",), root_url, id: "logo" %>
+    <%= link_to "サウナシェア", root_url, id: "logo" %>
+    <!-- <%= link_to image_tag("sauna_logo.jpg", alt: "sauna_logo",), root_url, id: "logo" %> -->
     <nav>
       <ul class="nav navbar-nav navbar-right">
       <% if logged_in? %>
         <li><%= link_to "投稿", newpost_path %></li>
+        <li><%= link_to "投稿一覧", root_path %></li>
         <li><%= link_to "アカウント", current_user %></li>
         <li><%= link_to "設定", edit_user_path(current_user) %></li>
         <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
