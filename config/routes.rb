@@ -15,5 +15,4 @@ Rails.application.routes.draw do
   end
   resources :microposts, only: [:index, :new, :create, :destroy]
   resources :relationships, only: [:create, :destroy]
-  resources :maps, only: [:index]
 end
