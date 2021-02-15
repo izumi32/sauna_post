@@ -24,7 +24,7 @@
 
           <div class="field">
             <%= f.label :sauna, "サウナ" %>
-            <%= f.select :sauna, [["有", 1], ["無", 0]], class: "field" %>
+            <%= f.select :sauna, [["有", :presence], ["無", :absence]], class: "field" %>
           </div>
 
           <div class="field">
