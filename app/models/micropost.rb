@@ -8,6 +8,8 @@ class Micropost < ApplicationRecord
   validates :evaluate, presence: true
   validates :user_id, presence: true
   enum sauna: { absence: 0, presence: 1 }
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 
   scope :search, -> (search_params) do
 
