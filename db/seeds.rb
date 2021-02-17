@@ -25,31 +25,31 @@ user2 = User.second
 user3 = User.third
 
 user1.microposts.create!(name: "極楽湯",
-                        address: "埼玉県和光市",
+                        address: "埼玉県和光市白子１丁目７−６",
                         price: 730,
                         sauna: 1,
                         evaluate: 4)
 
 user1.microposts.create!(name: "なごみの湯",
-                        address: "東京都杉並区",
+                        address: "東京都杉並区上荻１丁目１０−１０",
                         price: 2000,
                         sauna: 1,
                         evaluate: 3)
 
-user2.microposts.create!(name: "極楽湯",
-                        address: "埼玉県和光市",
-                        price: 730,
+user2.microposts.create!(name: "かるまる",
+                        address: "東京都豊島区池袋２丁目７−７",
+                        price: 3000,
                         sauna: 1,
                         evaluate: 4)
 
-user2.microposts.create!(name: "なごみの湯",
-                        address: "東京都杉並区",
+user2.microposts.create!(name: "天空のアジト マルシンスパ",
+                        address: "東京都渋谷区笹塚１丁目５８−６",
                         price: 2000,
                         sauna: 1,
                         evaluate: 3)
 
 user3.microposts.create!(name: "久松湯",
-                        address: "東京都練馬区",
+                        address: "東京都練馬区桜台４丁目３２−１５",
                         price: 900,
                         sauna: 1,
                         evaluate: 4)
