@@ -14,5 +14,9 @@ Rails.application.routes.draw do
     end
   end
   resources :microposts, only: [:index, :new, :create, :destroy]
+  resources :microposts do
+    get :map, on: :member
+    # => microposts/:id/map map_micropost_path(:id)
+  end
   resources :relationships, only: [:create, :destroy]
 end

@@ -25,6 +25,10 @@ class MicropostsController < ApplicationController
     redirect_to request.referrer || root_url
   end
 
+  def map
+    @micropost = Micropost.find(params[:id])
+  end
+
   private
 
   def micropost_params
