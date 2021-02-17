@@ -13,10 +13,6 @@ Rails.application.routes.draw do
       # => users/:id/followers followers_user_path(:id)
     end
   end
-  resources :microposts, only: [:index, :new, :create, :destroy]
-  resources :microposts do
-    get :map, on: :member
-    # => microposts/:id/map map_micropost_path(:id)
-  end
+  resources :microposts, only: [:index, :show, :new, :create, :destroy]
   resources :relationships, only: [:create, :destroy]
 end

@@ -5,6 +5,10 @@ class MicropostsController < ApplicationController
   def index
   end
 
+  def show
+    @micropost = Micropost.find(params[:id])
+  end
+
   def new
     @micropost = current_user.microposts.build
   end
@@ -23,10 +27,6 @@ class MicropostsController < ApplicationController
     @micropost.destroy
     flash[:success] = "投稿を削除しました"
     redirect_to request.referrer || root_url
-  end
-
-  def map
-    @micropost = Micropost.find(params[:id])
   end
 
   private
