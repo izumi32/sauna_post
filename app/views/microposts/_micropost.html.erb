@@ -13,45 +13,7 @@
     サウナ：<%= Micropost.human_attribute_name("sauna.#{micropost.sauna}") %>
   </span>
   <span class="content">評価：<%= micropost.evaluate %></span>
-  <script type="text/javascript">
-  function initMap() {
-    // #latitude,longitudeから位置を特定
-    var test ={lat: <%= micropost.latitude %>, lng: <%= micropost.longitude %>};
-    var map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 15,
-              center: test
-              });
-    var transitLayer = new google.maps.TransitLayer();
-    transitLayer.setMap(map);
-
-    var contentString = '住所：<%= micropost.address %>';
-    var infowindow = new google.maps.InfoWindow({
-      content: contentString
-    });
-
-    // #Map上の指定した位置にピンを挿して表示する
-    var marker = new google.maps.Marker({
-                  position:test,
-                  map: map,
-                  title: contentString
-                 });
-
-    marker.addListener('click', function() {
-     infowindow.open(map, marker);
-    });
-  };
-  </script>
-  <script async defer
-                src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%=  ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
-  </script>
-  <style type="text/css">
-    #map { height: 200px;
-           width: 70%;}
-  </style>
-
-  <!-- mapの表示 -->
-  <div id="map"></div>
   <span class="timestamp">
     <%= time_ago_in_words(micropost.created_at) %>前
-    </span>
+  </span>
 </li>
