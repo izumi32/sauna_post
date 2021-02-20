@@ -65,13 +65,52 @@ p {
   margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
-  text-transform: uppercase;
+  font-family: 'Kaushan Script', cursive;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   &:hover {
     color: #fff;
     text-decoration: none;
+  }
+}
+
+.navbar{
+  background-color: #00bfff;
+}
+
+// top page
+
+.top {
+  position: relative;
+  h1,h2 {
+    position: absolute;
+    color: white;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+  }
+  h1 {
+    top: 45%;
+    font-size: 7em;
+    font-family: 'Kaushan Script', cursive;
+  }
+  h2 {
+    top: 60%;
+    font-size: 2em;
+  }
+  img {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
   }
 }
 
@@ -89,9 +128,12 @@ p {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 15%;
+  // width: 100px;
   margin-bottom: 15px;
   @include box_sizing;
+  .form-check-input{
+    width: 20px;
+  }
 }
 
 input {

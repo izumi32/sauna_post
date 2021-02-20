@@ -51,9 +51,10 @@
 
   </div>
 <% else %>
-<div class="center jumbotron">
-  <h1>サウナシェア</h1>
-  <h2>全国のサウナ情報をみんなでシェアしよう！</h2>
+  <div class="top">
+    <%= image_tag "sauna_toppage2.jpg" %>
+    <h1>Sauna Share</h1>
+    <h2>全国のサウナ情報をみんなでシェアしよう！</h2>
+  </div>
   <%= link_to "アカウント登録", signup_path, class: "btn btn-primary" %>
-</div>
 <% end %>
