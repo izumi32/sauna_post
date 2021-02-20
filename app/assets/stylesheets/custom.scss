@@ -4,6 +4,7 @@
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
+$sky-blue: #00bfff;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -76,7 +77,13 @@ p {
 }
 
 .navbar{
-  background-color: #00bfff;
+  background-color: $sky-blue;
+}
+
+.navbar-nav {
+  li{
+  color: white;
+  }
 }
 
 // top page
@@ -113,6 +120,19 @@ p {
     margin-right: -50vw;
   }
 }
+.btn-top{
+  text-align: center;
+  padding-top: 20px;
+  .btn{
+    width: 100%;
+  }
+}
+
+.btn {
+  background-color: $sky-blue;
+  color: white;
+}
+
 
 /* miscellaneous */
 
