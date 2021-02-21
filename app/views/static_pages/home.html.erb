@@ -6,25 +6,25 @@
       <%= form_with(scope: :search, url: root_path, method: :get, local: true) do |f| %>
 
         <div class="field">
-          <%= f.label :name, Micropost.human_attribute_name("name") %>
+          <%= f.label :name, Micropost.human_attribute_name("name"),class: "label-name" %>
           <%= f.text_field :name, value: @search_params[:name] %>
         </div>
 
         <div class="field">
-          <%= f.label :address, Micropost.human_attribute_name("address") %>
+          <%= f.label :address, Micropost.human_attribute_name("address"),class: "label-name" %>
           <%= f.text_field :address, value: @search_params[:address] %>
         </div>
 
         <div class="field">
-          <%= f.label :price, Micropost.human_attribute_name("price") %>
+          <%= f.label :price, Micropost.human_attribute_name("price"),class: "label-name" %>
           <%= f.text_field :price_from, value: @search_params[:price_from] %> ~
           <%= f.text_field :price_to, value: @search_params[:price_to] %>
         </div>
 
         <div class="field">
-          <%= f.label :sauna, Micropost.human_attribute_name("sauna") %>
+          <%= f.label :sauna, Micropost.human_attribute_name("sauna"),class: "label-name" %>
           <%= f.collection_radio_buttons :sauna, Micropost.saunas, :first, :first do |r| %>
-            <%= tag.div class: 'form-check form-check-inline' do %>
+            <%= tag.div class: 'form-check radio-inline' do %>
               <%= r.radio_button(checked: r.value == @search_params[:sauna], class: 'form-check-input') %>
               <%= f.label(Micropost.human_attribute_name("sauna.#{r.text}"), class: 'form-check-label') %>
             <% end %>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="field">
-          <%= f.label :evaluate, Micropost.human_attribute_name("evaluate") %>
+          <%= f.label :evaluate, Micropost.human_attribute_name("evaluate"),class: "label-name" %>
           <%= f.collection_select :evaluate, [1, 2, 3, 4, 5], :to_s, :to_s, selected: @search_params[:evaluate], include_blank: '選択' %>
         </div>
 

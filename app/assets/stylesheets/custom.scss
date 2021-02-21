@@ -146,12 +146,12 @@ p {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  // width: 100px;
   margin-bottom: 15px;
   @include box_sizing;
-  .form-check-input{
-    width: 20px;
-  }
+}
+
+#search_evaluate {
+  width: 100px;
 }
 
 input {
@@ -167,9 +167,21 @@ input {
   }
 }
 
+.label-name {
+  padding-right: 20px;
+}
+
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+.field textarea{
+  width: 150px;
+}
+
+.field select{
+  width: 150px;
 }
 
 /* Users index */
