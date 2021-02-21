@@ -3,16 +3,16 @@
     <%= link_to "Sauna Share", root_url, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-      <% if logged_in? %>
-        <li><%= link_to "投稿", newpost_path %></li>
-        <li><%= link_to "投稿一覧", root_path %></li>
-        <li><%= link_to "アカウント", current_user %></li>
-        <li><%= link_to "設定", edit_user_path(current_user) %></li>
-        <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
-      <% else %>
-        <li><%= link_to "新規登録", signup_path %></li>
-        <li><%= link_to "ログイン", login_path %></li>
-      <% end %>
+        <% if logged_in? %>
+          <li><%= link_to "投稿", newpost_path %></li>
+          <li><%= link_to "投稿一覧", root_path %></li>
+          <li><%= link_to "アカウント", current_user %></li>
+          <li><%= link_to "設定", edit_user_path(current_user) %></li>
+          <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "新規登録", signup_path %></li>
+          <li><%= link_to "ログイン", login_path %></li>
+        <% end %>
       </ul>
     </nav>
   </div>
